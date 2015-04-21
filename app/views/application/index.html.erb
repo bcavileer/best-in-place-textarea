@@ -1,1 +1,7 @@
-<%= best_in_place @object, :description, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+<h1>Works :as => :input</h1>
+<p>If you click the input box, opening the editor, then press Tab, the blur event does not cancel. Only the cancel button will cancel.</p>
+<%= best_in_place @example, :description, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+
+<h1>Doesn't work :as => :textarea</h1>
+<p>If you click in the textarea, opening the editor, then press Tab, the blur event cancels!  This is undesired.  I'd prefer the behavior as above with input.</p>
+<%= best_in_place @example, :description, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
